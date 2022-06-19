@@ -15,7 +15,7 @@ class toDos extends ChangeNotifier {
   }
 
   void toggleTaskStatus({required int id}) {
-    var todo = todos.firstWhere((element) => element == id);
+    var todo = todos.firstWhere((element) => element.id == id);
     todo.done = !todo.done;
     notifyListeners();
   }
