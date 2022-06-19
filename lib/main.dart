@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:todo_app/pages/add_page.dart';
 import 'package:todo_app/pages/home_page.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/providers/todo_provider.dart';
 
 void main() {
-  runApp(MyApp());
+  // we add the change notifier then we use the create func for the notifer
+  //then add context between () and call the provider that i have created in provider folder
+  //last step add, then call the MyApp();
+  runApp(ChangeNotifierProvider(create: (context) => toDos(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
